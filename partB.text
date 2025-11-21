@@ -1,0 +1,25 @@
+1. What is the difference between forEach and for...of? When would you use each? (0.5 Grade) 
+
+forEach لو عايز اعدي علي كل العناصر الي موجوده في string او في Array و اطبق عليهم حاجة معينة 
+اما استخدام for of لو عايز اتحكم فيها و اقدر استخدم break و continue
+
+
+2. What is hoisting and what is the Temporal Dead Zone (TDZ)? Explain with examples. (0.5 Grade) 
+
+hoisting ===> يعني لغة الجافاسكريبت بترفع اكواد معينة لفوق قبل ما الكود يتنفذ من غير ما تديها قيمة
+Temporal Dead Zone ===> هي الجزء الي الكود فيها شايف المتغيرات و عارف انها موجوده بس مش لسه مش جاهزة للاستخدام 
+
+
+3. What are the main differences between == and ===? (0.5 Grade) 
+== =====> بيعمل مقارنة مع تحويل نوع القيمة  يعني ممكن اقارن رقم string  و يشوف هما زي بعض ولا لا 
+=== =====> بيقارن من غير اي تحويل بيحصل انه فبيقارن النوع و القيمة و القيمة 
+
+4. Explain how try-catch works and why it is important in async operations. (0.5 Grade) 
+
+tryAndCatch ===> اتاحة تجرب كود ممكن يحصل فيه error بدل مما البرنامج يوقف لا لازم يككمل  لجد ما يلاقي error و async مهمه عشان الاخطاء ساعات بتحصل من api  او ممكن تتاخر في الرد فبدل ما التطبيق يحصل فيه مشكلة ال catch بتمسك ال error
+
+5. What’s the difference between type conversion and coercion? Provide examples of each. (0.5 Grade) 
+
+conversion ====> تحويل نوع المتغير باديك بشكل صريح 
+
+coercion =====> الجافاسكريبت بتحول النوع لوحدها عشان العملية تكمل
