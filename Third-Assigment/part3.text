@@ -1,0 +1,43 @@
+<!-- 1. What is the Node.js Event Loop? (0.5 Grade) -->
+
+ال event loop ده بيخلي node.js تشتغل asynchronous من غير ما توقف البرنامج
+
+<!-- 2. What is Libuv and What Role Does It Play in Node.js? (0.5 Grade) -->
+
+libuv دي مكتبة مكتوبة بي c/v++ و node.js معتمد عليها
+دورها :
+بتدير ال event loop
+بتتعامل مع Thread Pool
+بتخلي الكود يشتغل non-blocking
+
+<!-- 3. How Does Node.js Handle Asynchronous Operations Under the Hood? (0.5 Grade) -->
+
+لما تحصل عملية Asynchrounous
+node يبعتها ل Libuv
+لو متسخدم file System بينفذها في Thread Pool
+لو متسخدم network بيستخدم os علطول
+لما العملية تخلص libuv بيبعت callback لل event loop  
+event loop يدخلها في queue عشان لما يجيي دورها يبدأ ينفذها
+
+<!-- 4. What is the Difference Between the Call Stack, Event Queue, and Event Loop in Node.js? (0.5 Grade) -->
+
+call stack => المكان الي الكود sync بيتفذ في خطوة خطوة
+event queue => ده المهام الي موجود في ال callbacks الي خلصت والي مستنيه تتنفذ
+
+event loop => ده المسئول انه يبص علي stack لو فاضي ياخد من الqueue و يدخلها تتنفذ لو مش فاضي يبقي يستني لحد ما يفضي خالص
+
+<!-- 5. What is the Node.js Thread Pool and How to Set the Thread Pool Size? (0.5 Grade) -->
+
+thread pool ده مجموعة threads موجودة جوا libuv مسؤولة عن العمليات التقيلة زي :
+file system
+dns
+العدد الافتراضي = 4
+ممكن نزود الحجم عن طريق الكود ده:
+UV_THREADPOOL_SIZE=20
+
+<!-- 6. How Does Node.js Handle Blocking and Non-Blocking Code Execution? (0.5 Grade) -->
+
+non-blocking=> الكود الي مش بيوقف البرنامج
+node بيعته لل os او thread pool و يكمل الكود الي بعده
+
+blocking => كود بيوقف البرنامج كله لحد ما يخلص
