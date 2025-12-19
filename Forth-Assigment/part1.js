@@ -108,7 +108,7 @@ app.get("/user/filter", (req, res) => {
 
 // 7- get user by id
 
-app.get("/user/:id", (req, res) => {
+app.get("/user{/:id}", (req, res) => {
   const users = readUsers();
   const { id } = req.params;
 
