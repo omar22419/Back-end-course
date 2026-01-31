@@ -1,0 +1,20 @@
+{
+  "name": "assigment-7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "type": "module",
+  "scripts": {
+    "start:dev": "cross-env NODE_ENV=development  node --watch-path=. ./src/index.js",
+    "start:prod": "cross-env NODE_ENV=production  node  ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "sequelize": "^6.37.7"
+  }
+}
