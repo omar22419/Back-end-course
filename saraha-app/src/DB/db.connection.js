@@ -5,7 +5,7 @@ import { UserModel } from './Models/user.model.js';
 export const connectDB = async()=>{
     try{
         await mongoose.connect(DB_URI);
-        await UserModel.syncIndexes()
+        await UserModel.syncIndexes();
         console.log("DB connected")
     }catch(error){
         console.log(error)

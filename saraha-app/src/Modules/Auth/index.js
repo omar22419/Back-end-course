@@ -1,1 +1,1 @@
-export * from './auth.controller'
+export {default as authRouter} from './auth.controller.js'

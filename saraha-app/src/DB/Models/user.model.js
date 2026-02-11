@@ -62,4 +62,4 @@ userSchema.virtual('username').set(function(value){
 })
 
 
-export const UserModel = mongoose.models.User || mongoose.model('User',userSchema)
+export const UserModel = mongoose.models.User || mongoose.model("User",userSchema)
