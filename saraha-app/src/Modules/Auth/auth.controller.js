@@ -14,6 +14,15 @@ router.post("/signup", async (req, res, next) => {
   });
 });
 
+
+router.get("/verify/:otp", async (req, res, next) => {
+  const result = await verifyOtp(req.body);
+  return successResponse({
+    res,
+    data: result,
+  });
+});
+
 router.post("/login", async (req, res, next) => {
     const result = await login(req.body);
     return successResponse({

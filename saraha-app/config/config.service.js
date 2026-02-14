@@ -20,5 +20,9 @@ export const DB_NAME = process.env.DB_NAME
 
 export const ENC_BYTE= process.env.ENC_BYTE
 
+export const EMAIL_USER=process.env.EMAIL_USER
+export const EMAIL_PASSWORD=process.env.EMAIL_PASSWORD
+export const EMAIL_SERVICE=process.env.EMAIL_SERVICE
+
 export const SALT_ROUND = parseInt(process.env.SALT_ROUND ?? '10')
 console.log({SALT_ROUND});

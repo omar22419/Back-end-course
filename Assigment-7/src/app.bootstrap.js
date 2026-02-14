@@ -1,12 +1,17 @@
 import dotenv from "dotenv";
-import { userRouter, postRouter, commentRouter } from "./modules/index.js";
+import { userRouter, postRouter, commentRouter, authRouter } from "./modules/index.js";
+import { checkDBConnection } from "./DB/connection.db.js";
 dotenv.config({
   path: "./config/dev.env",
 });
 
-const bootstrap = (app, express) => {
+const bootstrap = async(app, express) => {
   app.use(express.json());
 
+  await checkDBConnection();
+
+
+  app.use("/auth", authRouter);
   app.use("/users", userRouter);
   app.use("/posts", postRouter);
   app.use("/comments", commentRouter);
