@@ -7,3 +7,8 @@ export const ProviderEnum ={
     System:0,
     Google:1
 }
+
+export const RoleEnum ={
+    User:1,
+    Admin:0
+}

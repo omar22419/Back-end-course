@@ -11,11 +11,11 @@ export const encrypt= async(text)=>{
     return `${iv.toString('hex')}:${encrypted}`;
 }
 
-export const decrypt= async (encrypted)=>{
-    const [iv, encryptedText]= encrypted.split(':');
+export const decrypt= async (cipher)=>{
+    const [iv, encryptedData]= cipher.split(':');
     const binaryIv = Buffer.from(iv, 'hex');
     const decipher = crypto.createDecipheriv('aes-256-cbc',ENCRYPTION_SECRET_KEY, binaryIv)
-    let decrypted = decipher.update(encryptedText,'hex','utf-8');
+    let decrypted = decipher.update(encryptedData,'hex','utf-8');
     decrypted += decipher.final('utf-8');
     return decrypted;
 }

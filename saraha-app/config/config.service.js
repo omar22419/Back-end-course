@@ -26,3 +26,14 @@ export const EMAIL_SERVICE=process.env.EMAIL_SERVICE
 
 export const SALT_ROUND = parseInt(process.env.SALT_ROUND ?? '10')
 console.log({SALT_ROUND});
+
+
+export const User_TOKEN_SECRET_KEY = process.env.User_TOKEN_SECRET_KEY;
+export const System_TOKEN_SECRET_KEY = process.env.System_TOKEN_SECRET_KEY;
+export const User_REFRESH_TOKEN_SECRET_KEY = process.env.User_REFRESH_TOKEN_SECRET_KEY;
+export const System_REFRESH_TOKEN_SECRET_KEY = process.env.System_REFRESH_TOKEN_SECRET_KEY;
+export const REFRESH_EXPIRES_IN = parseInt(process.env.REFRESH_EXPIRES_IN);
+export const ACCESS_EXPIRES_IN = parseInt(process.env.ACCESS_EXPIRES_IN);
+
+
+export const OTP_EXPIRES_IN_MINUTES = parseInt(process.env.OTP_EXPIRES_IN_MINUTES ?? '5')
